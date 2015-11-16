@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tech Comm on a Map</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+<link href="resources/techcomm-map-styles.css" rel="stylesheet" type="text/css" />
+
+<!-- Include the Google Analytics JavaScript -->
+<script type="text/javascript" src="resources/techcomm-map-ga.js"></script>
+
+<!-- Load the Google Maps JavaScript API -->
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwWekcCNrI7bXKrGY4kOUWQjQGImf2lzc&libraries=places">
+</script>
+
+<!-- Load jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- Set up the map and UI controls -->
+<script src="resources/techcomm-map.js" charset="utf-8"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    // Yes
+    navigator.serviceWorker.register('service-worker.js').then(function() {
+      console.log("Service worker installed.");
+    });
+  } else {
+    // No, but this client should work anyway.
+  };
+</script>
+</head>
+
+<body>
+  <!-- Search box -->
+  <input id="place-search" type="text"
+  placeholder="Search for a location">
+
+  <!-- Data type selectors -->
+  <div id="type-selector">
+    <input type="checkbox" name="type" id="selecttype-conference15"
+      checked="checked" onclick="handleCheckBoxClick(this, 'Conference 2015')">
+    <label for="selecttype-conference15">Conferences 2015</label>
+    <br>
+    <input type="checkbox" name="type" id="selecttype-conference16"
+      checked="checked" onclick="handleCheckBoxClick(this, 'Conference 2016')">
+    <label for="selecttype-conference16">Conferences 2016</label>
+    <br>
+    <input type="checkbox" name="type" id="selecttype-society"
+      checked="checked" onclick="handleCheckBoxClick(this, 'Society')">
+    <label for="selecttype-society">Societies</label>
+    <br>
+    <input type="checkbox" name="type" id="selecttype-group"
+      checked="checked" onclick="handleCheckBoxClick(this, 'Group')">
+    <label for="selecttype-group">Groups</label>
+    <br>
+    <input type="checkbox" name="type" id="selecttype-business"
+      checked="checked" onclick="handleCheckBoxClick(this, 'Business')">
+    <label for="selecttype-business">Businesses</label>
+    <br>
+    <input type="checkbox" name="type" id="selecttype-course"
+      checked="checked" onclick="handleCheckBoxClick(this, 'Course')">
+    <label for="selecttype-course">Courses</label>
+    <br>
+    <input type="checkbox" name="type" id="selecttype-other"
+      checked="checked" onclick="handleCheckBoxClick(this, 'Other')">
+    <label for="selecttype-other">Other</label>
+  </div>
+
+  <div id = "branding">
+     <span>Tech Comm on a Map
+       (<a href="http://ffeathers.wordpress.com/tech-comm-on-a-map/">about</a>)
+     </span>
+  </div>
+
+  <!-- Map -->
+  <div id="map-canvas"></div>
+</body>
+</html>
