@@ -27,7 +27,7 @@
 
 
 /* eslint-disable quotes, comma-spacing */
-var PrecacheConfig = [["/index.html","1920af085107eadc6335a6c7a141d8f1"],["/resources/techcomm-map-ga.js","645db34fd1cbf32043e8cd4002469974"],["/resources/techcomm-map-styles.css","0dd26244ce3ee5b9fb806f70c81a13f0"],["/resources/techcomm-map.js","e861c28deca7c30aa6102271ff843478"]];
+var PrecacheConfig = [["/index.html","1920af085107eadc6335a6c7a141d8f1"],["/resources/techcomm-map-ga.js","645db34fd1cbf32043e8cd4002469974"],["/resources/techcomm-map-styles.css","0dd26244ce3ee5b9fb806f70c81a13f0"],["/resources/techcomm-map.js","e861c28deca7c30aa6102271ff843478"],["/service-worker.js","9d690ec44a1bf2732fb4d5632757d60f"]];
 /* eslint-enable quotes, comma-spacing */
 var CacheNamePrefix = 'sw-precache-v1--' + (self.registration ? self.registration.scope : '') + '-';
 

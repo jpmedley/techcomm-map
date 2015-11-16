@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 var express = require('express');
+var path = require('path');
+var swPrecache = require('sw-precache');
 
 var ROOT_DIR = 'app';
 
@@ -22,8 +24,6 @@ function runExpress(port, rootDir) {
 }
 
 gulp.task('generate-service-worker', function(callback) {
-  var path = require('path');
-  var swPrecache = require('sw-precache');
   swPrecache.write(path.join(ROOT_DIR, 'service-worker.js'), {
     staticFileGlobs: [ROOT_DIR + '/**/*.{js,html,css,png,jpg,gif}'],
     stripPrefix: ROOT_DIR
@@ -31,5 +31,5 @@ gulp.task('generate-service-worker', function(callback) {
 });
 
 gulp.task('serve', ['generate-service-worker'], function() {
-  runExpress(3000, ROOT_DIR)
+  runExpress(3000, ROOT_DIR);
 });
