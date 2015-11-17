@@ -25,6 +25,7 @@ function runExpress(port, rootDir) {
 
 gulp.task('generate-service-worker', function(callback) {
   swPrecache.write(path.join(ROOT_DIR, 'service-worker.js'), {
+    importScripts: ['bower-components/sw-toolbox/sw-toolbox.js','scripts/fetch.js'],
     staticFileGlobs: [ROOT_DIR + '/**/*.{js,html,css,png,jpg,gif}'],
     stripPrefix: ROOT_DIR
   }, callback);
