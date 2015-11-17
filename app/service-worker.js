@@ -25,9 +25,11 @@
 'use strict';
 
 
+importScripts("bower-components/sw-toolbox/sw-toolbox.js","scripts/fetch.js");
+
 
 /* eslint-disable quotes, comma-spacing */
-var PrecacheConfig = [["/index.html","1920af085107eadc6335a6c7a141d8f1"],["/resources/techcomm-map-ga.js","645db34fd1cbf32043e8cd4002469974"],["/resources/techcomm-map-styles.css","0dd26244ce3ee5b9fb806f70c81a13f0"],["/resources/techcomm-map.js","e861c28deca7c30aa6102271ff843478"],["/service-worker.js","9d690ec44a1bf2732fb4d5632757d60f"]];
+var PrecacheConfig = [["/bower_components/sw-toolbox/companion.js","7fb0d90915fe850179adf9a260b7e6e9"],["/bower_components/sw-toolbox/recipes/cache-expiration-options/app.js","5f9e7c91e670cf6da8d948c37760b563"],["/bower_components/sw-toolbox/recipes/cache-expiration-options/index.html","668aa76bfced1d958d8865570be7f8e2"],["/bower_components/sw-toolbox/recipes/cache-expiration-options/service-worker.js","14b3fc698c1e258ca7eee8aca5e584a9"],["/bower_components/sw-toolbox/recipes/cache-expiration-options/styles.css","b997097ccff1ae49dfc13c7da007d678"],["/bower_components/sw-toolbox/recipes/common.css","e5fb8d3fe68a6c7961e5e5b3708a8a05"],["/bower_components/sw-toolbox/recipes/index.html","56c634c3d7fc7763366fad668cc0f9c6"],["/bower_components/sw-toolbox/sw-toolbox.js","d5138138ca7071b7e0fc36e90095718e"],["/index.html","1920af085107eadc6335a6c7a141d8f1"],["/resources/techcomm-map-ga.js","645db34fd1cbf32043e8cd4002469974"],["/resources/techcomm-map-styles.css","0dd26244ce3ee5b9fb806f70c81a13f0"],["/resources/techcomm-map.js","e861c28deca7c30aa6102271ff843478"],["/scripts/fetch.js","19a600299c5fb9117d155c1d71fa1190"],["/service-worker.js","906f8e29b70c93bc9641a2b2f5de8999"]];
 /* eslint-enable quotes, comma-spacing */
 var CacheNamePrefix = 'sw-precache-v1--' + (self.registration ? self.registration.scope : '') + '-';
 
