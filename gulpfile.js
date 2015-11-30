@@ -27,11 +27,16 @@ function runExpress(port, rootDir) {
 
 gulp.task('generate-service-worker', function(callback) {
   swPrecache.write(path.join(ROOT_DIR, 'service-worker.js'), {
-    importScripts: ['sw-toolbox/sw-toolbox.js','fetch.js'],
+    importScripts: ['sw-toolbox.js','fetch.js'],
     staticFileGlobs: [ROOT_DIR + '/**/*.{js,html,css,png,jpg,gif}'],
     stripPrefix: ROOT_DIR
   }, callback);
 });
+
+gulp.task('stage', function() {
+  gulp.src('./bower_components/sw-toolbox/*.js')
+  .pipe(gulp.dest('./app/scripts'));
+})
 
 gulp.task('serve', ['generate-service-worker'], function() {
   runExpress(3000, ROOT_DIR);

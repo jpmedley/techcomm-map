@@ -25,11 +25,11 @@
 'use strict';
 
 
-importScripts("sw-toolbox/sw-toolbox.js","fetch.js");
+importScripts("sw-toolbox.js","fetch.js");
 
 
 /* eslint-disable quotes, comma-spacing */
-var PrecacheConfig = [["bower_components/sw-toolbox/recipes/cache-expiration-options/index.html","668aa76bfced1d958d8865570be7f8e2"],["bower_components/sw-toolbox/recipes/cache-expiration-options/styles.css","b997097ccff1ae49dfc13c7da007d678"],["bower_components/sw-toolbox/recipes/common.css","e5fb8d3fe68a6c7961e5e5b3708a8a05"],["bower_components/sw-toolbox/recipes/index.html","56c634c3d7fc7763366fad668cc0f9c6"],["index.html","1920af085107eadc6335a6c7a141d8f1"],["resources/techcomm-map-styles.css","0dd26244ce3ee5b9fb806f70c81a13f0"]];
+var PrecacheConfig = [["/index.html","1920af085107eadc6335a6c7a141d8f1"],["/resources/techcomm-map-ga.js","645db34fd1cbf32043e8cd4002469974"],["/resources/techcomm-map-styles.css","0dd26244ce3ee5b9fb806f70c81a13f0"],["/resources/techcomm-map.js","e861c28deca7c30aa6102271ff843478"],["/scripts/companion.js","7fb0d90915fe850179adf9a260b7e6e9"],["/scripts/fetch.js","f43326695192bd7b2376867bc127b4d3"],["/scripts/sw-toolbox.js","d5138138ca7071b7e0fc36e90095718e"],["/service-worker.js","d55042ba028b0666b4e51d1f9048e5fe"]];
 /* eslint-enable quotes, comma-spacing */
 var CacheNamePrefix = 'sw-precache-v1--' + (self.registration ? self.registration.scope : '') + '-';
 
