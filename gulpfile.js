@@ -9,6 +9,8 @@ function runExpress(port, rootDir) {
   var app = express();
 
   app.use(express.static(rootDir));
+  app.use(express.static(rootDir + '/bower_components'));
+  app.use(express.static(rootDir + '/scripts'));
   app.set('views', path.join(rootDir, 'views'));
   app.set('view engine', 'jade');
 
@@ -25,7 +27,7 @@ function runExpress(port, rootDir) {
 
 gulp.task('generate-service-worker', function(callback) {
   swPrecache.write(path.join(ROOT_DIR, 'service-worker.js'), {
-    importScripts: ['bower-components/sw-toolbox/sw-toolbox.js','scripts/fetch.js'],
+    importScripts: ['sw-toolbox/sw-toolbox.js','fetch.js'],
     staticFileGlobs: [ROOT_DIR + '/**/*.{js,html,css,png,jpg,gif}'],
     stripPrefix: ROOT_DIR
   }, callback);
